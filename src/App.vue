@@ -1,8 +1,8 @@
 <template>
   To do
-  <to-do-list :toDoList="list.toDoItems" />
+  <to-do-list @remove="remove" :toDoList="list.toDoItems" />
   Done
-  <to-do-list :toDoList="list.doneItems" />
+  <to-do-list @remove="remove" :toDoList="list.doneItems" />
   <form-vue @add="add"></form-vue>
 </template>
 
@@ -24,6 +24,9 @@ export default {
     add(inputValue) {
       this.list.add(inputValue);
     },
+    remove(id){
+      this.list.remove(id);
+    }
   },
 };
 </script>

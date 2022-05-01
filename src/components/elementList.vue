@@ -2,7 +2,7 @@
   <div>
     <p>{{ elementList.value }}</p>
     <button v-if="!elementList.isDone">+</button>
-    <button>-</button>
+    <button @click="remove(elementList.id)">-</button>
   </div>
 </template>
 
@@ -11,6 +11,12 @@ export default {
   props: {
     elementList: {
       required: true,
+    },
+    
+  },
+  methods: {
+    remove(id) {
+      this.$emit("remove", id);
     },
   },
 };
