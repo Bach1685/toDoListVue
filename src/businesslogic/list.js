@@ -20,7 +20,7 @@ export class List {
     this.add("Выпить суп");
     this.add("Выпить камень");
     this.add("камень я не дам");
-    this.do(1);
+    this.mark(1);
   }
 
   add(text) {
@@ -35,7 +35,7 @@ export class List {
     this._items.splice(removedItemIndex, 1);
   }
 
-  do(id) {
+  mark(id) {
     let item = this._items.find((item) => {
       return item.id == id;
     });

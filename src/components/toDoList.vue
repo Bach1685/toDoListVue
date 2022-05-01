@@ -1,7 +1,11 @@
 <template>
   <ul>
     <li v-for="item in toDoList" :key="item.id">
-      <element-list @remove="remove" :elementList="item"></element-list>
+      <element-list
+        @remove="remove"
+        @mark="mark"
+        :elementList="item"
+      ></element-list>
     </li>
   </ul>
 </template>
@@ -18,7 +22,10 @@ export default {
   },
   methods: {
     remove(id) {
-      this.$emit('remove', id);
+      this.$emit("remove", id);
+    },
+    mark(id) {
+      this.$emit("mark", id);
     },
   },
 };
