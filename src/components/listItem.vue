@@ -1,15 +1,15 @@
 <template>
   <div>
-    <p>{{ elementList.value }}</p>
-    <button v-if="!elementList.isDone" @click="mark(elementList.id)">+</button>
-    <button @click="remove(elementList.id)">-</button>
+    <p>{{ item.value }}</p>
+    <button v-if="!item.isDone" @click="mark(item.id)">Выполнить</button>
+    <button @click="remove(item.id)">Удалить</button>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    elementList: {
+    item: {
       required: true,
     },
   },

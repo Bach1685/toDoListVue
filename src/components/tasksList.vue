@@ -1,21 +1,17 @@
 <template>
   <ul>
-    <li v-for="item in toDoList" :key="item.id">
-      <element-list
-        @remove="remove"
-        @mark="mark"
-        :elementList="item"
-      ></element-list>
+    <li v-for="item in list" :key="item.id">
+      <list-item @remove="remove" @mark="mark" :item="item" />
     </li>
   </ul>
 </template>
 
 <script>
-import elementList from "./elementList.vue";
+import listItem from "./listItem.vue";
 export default {
-  components: { elementList },
+  components: { listItem },
   props: {
-    toDoList: {
+    list: {
       type: Array,
       required: true,
     },
