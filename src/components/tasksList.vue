@@ -1,7 +1,7 @@
 <template>
   <ul>
     <li v-for="item in list" :key="item.id">
-      <list-item @remove="remove" @mark="mark" :item="item" />
+      <list-item :item="item" />
     </li>
   </ul>
 </template>
@@ -14,14 +14,6 @@ export default {
     list: {
       type: Array,
       required: true,
-    },
-  },
-  methods: {
-    remove(id) {
-      this.$emit("remove", id);
-    },
-    mark(id) {
-      this.$emit("mark", id);
     },
   },
 };

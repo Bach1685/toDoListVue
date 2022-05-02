@@ -2,15 +2,17 @@
   <div>
     <input
       v-model="inputValue"
-      @keyup.enter="add"
+      @keyup.enter="add(inputValue)"
       placeholder="Введите таску"
       type="text"
     />
-    <button @click="add">добавить</button>
+    <button @click="add(inputValue)">добавить</button>
   </div>
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
 export default {
   data() {
     return {
@@ -18,9 +20,7 @@ export default {
     };
   },
   methods: {
-    add() {
-      this.$emit("add", this.inputValue);
-    },
+    ...mapMutations(["add"]),
   },
 };
 </script>

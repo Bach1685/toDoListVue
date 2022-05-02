@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
 export default {
   props: {
     item: {
@@ -14,12 +16,7 @@ export default {
     },
   },
   methods: {
-    remove(id) {
-      this.$emit("remove", id);
-    },
-    mark(id) {
-      this.$emit("mark", id);
-    },
+    ...mapMutations(["mark", "remove"]),
   },
 };
 </script>
